@@ -9,7 +9,9 @@
 </head>
 <body>
 	<jsp:include page="design/header.jsp" />
-	<h1>INDEX</h1>
+	
+	<img src="images/stockholm-snow.jpg" style="width: 100%; height: auto;" />
+	
 	<jsp:include page="design/footer.jsp" />
 </body>
 </html>
