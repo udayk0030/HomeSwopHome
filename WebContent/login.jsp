@@ -10,7 +10,7 @@
 <body>
 	<jsp:include page="design/header.jsp" />
 
-	<form name="loginform" action="ControllerUser" method="post" >
+	<form name="loginform" action="ControllerUser" method="POST" >
 		<h1 id="h">Login Here</h1>
 		<label>Email:</label> <input  type="text" name="email" /> <br>
 		<br>

@@ -2,15 +2,19 @@ package lab.mvc.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.mysql.jdbc.Connection;
+
+import lab.mvc.model.UsualFunctions;
 
 /**
  * Servlet implementation class ControllerUser
@@ -40,21 +44,28 @@ public class ControllerUser extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doGet(request, response);
+		//doGet(request, response);
 		
 		response.setContentType("text/html");
 		response.setCharacterEncoding( "UTF-8" );
 		PrintWriter out = response.getWriter();
-		out.println("<!DOCTYPE html>");
-		out.println("<html>");
-		out.println("<head>");
-		out.println("<meta charset=\"utf-8\" />");
-		out.println("<title>Test</title>");
-		out.println("</head>");
-		out.println("<body>");
-		out.println("<p>Ceci est une page générée depuis une servlet.</p>");
-		out.println("</body>");
-		out.println("</html>");
+		
+		out.println("<doctype><html><head><title>Lab 1</title></head><body>");
+		try {
+			UsualFunctions f = new UsualFunctions();
+			Connection c = f.connectDB();
+		
+			Statement s = c.createStatement();
+			ResultSet resultat = s.executeQuery( "SELECT * FROM Users" );
+			out.println(resultat);
+			
+			s.close();
+			c.close();
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		out.println("</body></html>");
 	}
 
 }
