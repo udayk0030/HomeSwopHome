@@ -16,7 +16,7 @@ public class Dbmanage {
             // 加载数据库驱动
             String url = "jdbc:mysql://localhost:3306/userdb?charaterEncoding=utf-8";
             // 定义数据库地址url，并设置编码格式
-            conn = DriverManager.getConnection(url, "root", "");
+            conn = DriverManager.getConnection(url, "root", "anguis5h");
             // 得到数据连接
         } catch (ClassNotFoundException e) {
 
