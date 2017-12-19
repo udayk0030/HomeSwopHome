@@ -5,7 +5,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet" type="text/css" href="design/design.css"> 
-	<title>HomeSwopHome</title>
+	<title>HomeSwopHome </title>
 </head>
 <body>
 	<jsp:include page="design/header.jsp" />
