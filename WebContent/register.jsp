@@ -5,8 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Register here</title>
-<link rel="stylesheet" type="text/css" href="SignPage.css"> 
-
+<link rel="stylesheet" type="text/css" href="design/design.css"> 
 <script>
 function validate(){
 	var email = document.registerform.email.value;
@@ -29,45 +28,12 @@ function validate(){
 	
 	
 }
-
 </script>
-
 </head>
 <body>
-<<<<<<< HEAD
-
-<div>
-<form name="registerform" action="ControllerUser" method="post" onsubmit = "return validate()" >
-
-<h1 id="h">Register Here</h1>
-
-<p>
-
-Email Address: <input  type="text" name="email" /> <br>
-Password: <input type="password" name="password" /> <br>
-Confirm Password: <input type="password" name="repassword" /> <br>
-
-<br>
-Personal Information <br>
-<br>
-First Name: <input  type="text" name="firstName" /> <br>
-Last Name: <input  type="text" name="lastName" /> <br>
-Telephone Number: <input  type="text" name="tel" /> <br>
-
-
-
-<br>
-<input type="submit" value="Submit" />
-
-</p>
-</form>
-</div>
-
-
-=======
 	<jsp:include page="design/header.jsp" />
 
-	<form name="registerform" action="ControllerUser" method="post" onsubmit = "return validate()" >
+	<form name="registerform" action="Controller1" method="post" onsubmit = "return validate()" >
 		<h1 id="h">Register Here</h1>
 		<label>Email:</label> <input  type="text" name="email" /> <br>
 		<label>Password:</label> <input type="password" name="password" /> <br>
@@ -83,6 +49,5 @@ Telephone Number: <input  type="text" name="tel" /> <br>
 	</form>
 	
 	<jsp:include page="design/footer.jsp" />
->>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
 </body>
 </html>

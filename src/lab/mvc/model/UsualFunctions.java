@@ -1,78 +1,33 @@
 package lab.mvc.model;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
+import com.mysql.jdbc.Connection;
 
 public class UsualFunctions {
-	
-	public Connection initDB(){
-		Connection conn =null;
+
+	public Connection connectDB() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-
-			String url = "jdbc:mysql://localhost:3306/UserDB";
-			
-
-			conn = DriverManager.getConnection(url, "root", "anguis5h");
-		}catch(ClassNotFoundException e){
-			
-			e.printStackTrace();
-		}catch(SQLException e){
-			e.printStackTrace();
+			 Class.forName( "com.mysql.jdbc.Driver" );
+					 // Class.forName("oracle.jdbc.OracleDriver") ;
+		} catch ( ClassNotFoundException e ) {
+			 e.printStackTrace();
 		}
-		return conn;
-		
-
-
-	}
-	
-	
-	public void closeDB(Statement sta, Connection conn) {
-
+					
+		String url = "jdbc:mysql://localhost:3306/HomeSwopHome?autoReconnect=true&useSSL=false";
+		String user = "root";
+		String pass = "root";
+		Connection connexion = null;
 		try {
-			sta.close();
-
-			conn.close();
-
-		} catch (SQLException e) {
-
+		 connexion = (Connection) DriverManager.getConnection( url, user, pass );
+		 /* Requests to bdd will be here */
+		} catch ( SQLException e ) {
 			e.printStackTrace();
-
-		}
-
-	}
-	
-	public void closeDB(ResultSet rs, Statement sta, Connection conn) {
-
-		try {
-			rs.close();
-
-			sta.close();
-
-			conn.close();
-
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-<<<<<<< HEAD
-		
-		}
-		
-	
-=======
 		} 
-		
+			
 		return connexion;
->>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
+		
 	}
-
-	
-
-
-	
-	
-
+			
 }
