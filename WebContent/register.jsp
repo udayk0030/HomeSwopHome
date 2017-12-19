@@ -33,7 +33,7 @@ function validate(){
 <body>
 	<jsp:include page="design/header.jsp" />
 
-	<form name="registerform" action="Controller1" method="post" onsubmit = "return validate()" >
+	<form name="registerform" action="ControllerUser" method="post" onsubmit = "return validate()" >
 		<h1 id="h">Register Here</h1>
 		<label>Email:</label> <input  type="text" name="email" /> <br>
 		<label>Password:</label> <input type="password" name="password" /> <br>

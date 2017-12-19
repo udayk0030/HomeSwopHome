@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.mysql.jdbc.Connection;
 
 import lab.mvc.model.UsualFunctions;
+import lab.mvc.model.UserModel;
 
 /**
  * Servlet implementation class ControllerUser
@@ -49,8 +50,8 @@ public class ControllerUser extends HttpServlet {
 		response.setContentType("text/html");
 		response.setCharacterEncoding( "UTF-8" );
 		PrintWriter out = response.getWriter();
-		
-		out.println("<doctype><html><head><title>Lab 1</title></head><body>");
+		 
+		out.println("<doctype><html><head><title></title></head><body>");
 		try {
 			UsualFunctions f = new UsualFunctions();
 			Connection c = f.connectDB();

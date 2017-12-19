@@ -25,9 +25,8 @@ public class UsualFunctions {
 		} catch ( SQLException e ) {
 			e.printStackTrace();
 		} 
-			
-		return connexion;
 		
+		return connexion;
 	}
 			
 }
