@@ -23,6 +23,11 @@ import lab.mvc.model.UserFunctions;
 
 
 
+<<<<<<< HEAD
+=======
+import lab.mvc.model.UsualFunctions;
+import lab.mvc.model.UserModel;
+>>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
 
 /**
  * Servlet implementation class Controller1
@@ -122,6 +127,7 @@ public class ControllerUser extends HttpServlet {
 //		LoginDao loginDao = new LoginDao();
 //		String userValidate = loginDao.authenticateUser(UserInfo);
 		
+<<<<<<< HEAD
 		
 //		String userId = request.getParameter("userId");
 //		String houseId = request.getParameter("houseId");
@@ -152,6 +158,16 @@ public class ControllerUser extends HttpServlet {
 //		out.println("</BODY></HTML>");
 //		
 //		out.close();
+=======
+		response.setContentType("text/html");
+		response.setCharacterEncoding( "UTF-8" );
+		PrintWriter out = response.getWriter();
+		 
+		out.println("<doctype><html><head><title></title></head><body>");
+		try {
+			UsualFunctions f = new UsualFunctions();
+			Connection c = f.connectDB();
+>>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
 		
 		
 		

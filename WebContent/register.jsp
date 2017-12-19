@@ -34,6 +34,7 @@ function validate(){
 
 </head>
 <body>
+<<<<<<< HEAD
 
 <div>
 <form name="registerform" action="ControllerUser" method="post" onsubmit = "return validate()" >
@@ -63,5 +64,25 @@ Telephone Number: <input  type="text" name="tel" /> <br>
 </div>
 
 
+=======
+	<jsp:include page="design/header.jsp" />
+
+	<form name="registerform" action="ControllerUser" method="post" onsubmit = "return validate()" >
+		<h1 id="h">Register Here</h1>
+		<label>Email:</label> <input  type="text" name="email" /> <br>
+		<label>Password:</label> <input type="password" name="password" /> <br>
+		<label>Confirm Password:</label> <input type="password" name="repassword" /> <br>
+		<br>
+		Personal Information <br>
+		<br>
+		<label>First Name:</label> <input  type="text" name="firstName" /> <br>
+		<label>Last Name:</label> <input  type="text" name="lastName" /> <br>
+		<label>Telephone Number:</label> <input  type="text" name="tel" /> <br>
+		<br>
+		<input type="submit" value="Submit" />
+	</form>
+	
+	<jsp:include page="design/footer.jsp" />
+>>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
 </body>
 </html>

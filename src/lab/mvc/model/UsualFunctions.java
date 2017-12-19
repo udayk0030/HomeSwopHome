@@ -57,10 +57,16 @@ public class UsualFunctions {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+<<<<<<< HEAD
 		
 		}
 		
 	
+=======
+		} 
+		
+		return connexion;
+>>>>>>> ca321f6f958836b501129de6246ebce3261dc6c3
 	}
 
 	
