@@ -20,7 +20,8 @@
 		<br>
 		<a href="register.jsp">Don't have an account? </a>
 	</form>
-	
+	<br>
+	<br>
 	<jsp:include page="design/footer.jsp" />
 </body>
 </html>

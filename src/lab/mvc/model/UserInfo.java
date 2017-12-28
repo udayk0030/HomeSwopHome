@@ -8,16 +8,16 @@ public class UserInfo {
 	private String lastName;	
 	private String tel;
 	private String houseId;
-	public UserInfo(String email, String password, String firstName,
-			String lastName, String tel, String houseId) {
-		super();
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.tel = tel;
-		this.houseId = houseId;
-	}
+//	public UserInfo(String email, String password, String firstName,
+//			String lastName, String tel, String houseId) {
+//		super();
+//		this.email = email;
+//		this.password = password;
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.tel = tel;
+//		this.houseId = houseId;
+//	}
 	public String getEmail() {
 		return email;
 	}

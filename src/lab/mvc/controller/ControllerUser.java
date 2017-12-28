@@ -1,10 +1,7 @@
 package lab.mvc.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,9 +9,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.mysql.jdbc.Connection;
 
-import lab.mvc.model.UsualFunctions;
+
+import lab.mvc.dao.UserDao;
+import lab.mvc.model.UserInfo;
+
 
 /**
  * Servlet implementation class ControllerUser
@@ -37,6 +36,32 @@ public class ControllerUser extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		
+		UserDao userDao = new UserDao();
+		UserInfo user = userDao.judgeUserPassword(email, password);
+		
+		String message = "email and password are not correct！";
+
+		if (user == null) {
+
+			request.setAttribute("message", message);
+			
+//			response.getWriter().println("incorrect！");  
+
+			request.getRequestDispatcher("login.jsp").forward(request,response);
+			
+
+
+		}else{
+			request.getRequestDispatcher("index.jsp").forward(request,response);
+
+		}
+		
+		
 	}
 
 	/**
@@ -44,29 +69,32 @@ public class ControllerUser extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		//doGet(request, response);
 		
-		response.setContentType("text/html");
-		response.setCharacterEncoding( "UTF-8" );
-		PrintWriter out = response.getWriter();
+		String houseId = request.getParameter("houseId");
+		String email = request.getParameter("email");
+		String password  = request.getParameter("password");
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String tel = request.getParameter("tel");
+		//前台数据 from表单数据
 		
-		out.println("<doctype><html><head><title>Lab 1</title></head><body>");
-		try {
-			UsualFunctions f = new UsualFunctions();
-			Connection c = f.connectDB();
+		UserInfo user = new UserInfo(); //实例化一个model对象
+		user.setHouseId(houseId);
+		user.setEmail(email);
+		user.setPassword(password);
+		user.setFirstName(firstName);
+		user.setLastName(lastName);
+		user.setTel(tel);
+		//前台form表单数据存进model
 		
-			Statement s = c.createStatement();
-			ResultSet resultat = s.executeQuery( "SELECT * FROM Users" );
-			out.println(resultat);
-			
-			s.close();
-			c.close();
-		} catch(SQLException e) {
-			e.printStackTrace();
-		}
 		
-		out.println("</body></html>");
-	}
-	
+		
+		UserDao userDao = new UserDao();//实例化数据库操作对象
+		userDao.insertUser(user);//调用方法
+		request.getRequestDispatcher("login.jsp").forward(request,response);
+
+
+	}	
+		
 
 }
