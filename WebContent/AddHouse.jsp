@@ -5,10 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Add House Info</title>
+<link rel="stylesheet" type="text/css" href="adhom.css">
+</head>
 </head>
 <body>
 
+
 <form  action="Controller2" method="post" onsubmit = "return validate()" >
+
+
 
 Title: <input  type="text" name="houseId" /> <br>
 City: <input  type="text" name="city" /> <br>
